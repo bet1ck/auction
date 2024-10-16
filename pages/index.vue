@@ -3,8 +3,10 @@
 </script>
 
 <template>
-	<div class="index-page">
-		1
+	<div class="default-layout">
+		<main>
+			123
+		</main>
 	</div>
 </template>
 
