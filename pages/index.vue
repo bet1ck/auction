@@ -5,7 +5,7 @@
 <template>
 	<div class="default-layout">
 		<main>
-
+			<TheCard />
 		</main>
 	</div>
 </template>
