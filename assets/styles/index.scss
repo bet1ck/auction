@@ -6,6 +6,8 @@
 	box-sizing: border-box;
 	margin: 0;
 	padding: 0;
+	list-style-type: none;
+	text-decoration: none;
 	scroll-behavior: smooth;
 	font-family: 'Gilroy';
 	color: $textblack;
@@ -13,13 +15,7 @@
 
 body
 {
-	
-}
-
-a
-{
-	text-decoration: none;
-	color: $black;
+	&:has(.burger) { overflow: hidden; }
 }
 
 .container
@@ -33,10 +29,14 @@ a
 
 // transition -----------
 .v-enter-active,
-.v-leave-active { transition: opacity 0.2s ease; }
+.v-leave-active {
+	transition: all 0.5s ease;
+}
 
 .v-enter-from,
-.v-leave-to { opacity: 0; }
+.v-leave-to {
+	transform: translateX(100%);
+}
 
 // toaster
 .v-toast { z-index: 999999!important; }
@@ -51,89 +51,7 @@ a
 	.v-toast__text { padding: 0!important; }
 }
 
-h1
-{
-	font-weight: 600;
-	font-size: 19px;
-	line-height: 28px;
-	color: #000000;
-	margin: 0 0 4px 0;
-
-	@include mq($tablet)
-	{
-		font-size: 26px;
-		line-height: 38px;
-	}
-
-	@include mq($desktop)
-	{
-		font-size: 32px;
-		line-height: 38px;
-		margin: 0 0 8px 0;
-	}
-}
-
-h2
-{
-	font-weight: 600;
-	font-size: 18px;
-	line-height: 25px;
-	color: $black;
-	margin-top: 0;
-	margin-bottom: 18px;
-
-	@include mq($desktop)
-	{
-		font-size: 24px;
-		line-height: 33px;
-		margin-bottom: 27px;
-	}
-}
-
-h3
-{
-	font-size: 16px;
-	font-weight: 400;
-	margin: 0 0 10px;
-}
-
-h4
-{
-	font-size: 15px;
-	letter-spacing: 2.4px;;
-	line-height: 24px;
-	margin:0px 0 8px 0;
-}
-
-p
-{
-	margin-top: 0;
-	color: $black;
-}
-
-b
-{
-	font-weight: 700;
-}
-
-a,
-a:hover,
-a:active,
-a:visited,
-a:focus
-{
-	outline: 0;
-	text-decoration: none;
-}
-
-ul
-{
-	padding: 0;
-	margin: 0;
-	list-style-type: none;
-	li
-	{
-		margin: 0;
-		padding: 0;
-	}
+.v-enter-active,
+.v-leave-active {
+	transition: all 0.5s ease;
 }

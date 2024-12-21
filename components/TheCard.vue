@@ -1,26 +1,37 @@
 <template>
     <NuxtLink class="the-card">
         <div class="the-card__img">
-            <img src="../assets/img/ProductImage.png" alt="">
+            <img :src="img" alt="">
         </div>
         <div class="the-card__info">
             <div class="the-card__info-lot">
-                <p class="the-card__lot-text">Номер лота:</p>
-                <p class="the-card__lot-number">SKP05432</p>
+                <p class="the-card__lot-text">{{ titlelot }}</p>
+                <p class="the-card__lot-number">{{ numb }}</p>
             </div>
-            <p class="the-card__info-title">«Алжирские женщины (Версия О)», Пабло Пикассо</p>
+            <p class="the-card__info-title">{{ title }}</p>
             <div class="the-card__info-value">
                 <icons-currency />
                 <div class="the-card__value-title">
                     <p class="the-card__title-text">Стартовая цена</p>
-                    <p class="the-card__value-price">250 000 RUB</p>
+                    <p class="the-card__value-price">{{ price }} RUB</p>
                 </div>
             </div>
         </div>
+        <ui-button>выбрать</ui-button>
     </NuxtLink>
 </template>
 
 <script setup>
+
+	const props = defineProps({
+		id: { type: Number },
+		img: { type: String },
+		numb: { type: Number },
+		titlelot: { type: String },
+		price: { type: Number },
+		currency: { type: String },
+		title: { type: String },
+	});
 
 </script>
 

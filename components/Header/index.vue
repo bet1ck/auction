@@ -1,39 +1,41 @@
 <template>
-    <header class="header container">
-        <NuxtLink to="#" class="header__logo">
-            AUCTION.COM
-        </NuxtLink>
-        <div class="header__menu">
-            <NuxtLink to="#" class="header__menu-link">preferred access</NuxtLink>
-            <NuxtLink to="#" class="header__menu-link">about</NuxtLink>
-            <NuxtLink to="#" class="header__menu-link">discover</NuxtLink>
-            <NuxtLink to="#" class="header__menu-link">services</NuxtLink>
-            <NuxtLink to="#" class="header__menu-link">Как купить или продать</NuxtLink>
-        </div>
-        <div class="header__menu-btns">
-            <div class="header__btns-btn header__btns-btn--mobile">
-                <p>Авторизация</p>
-                <icons-auth />
+    <div>
+        <header class="header container">
+            <NuxtLink to="#" class="header__logo">
+                AUCTION.COM
+            </NuxtLink>
+            <div class="header__menu">
+                <NuxtLink to="#" class="header__menu-link">preferred access</NuxtLink>
+                <NuxtLink to="#" class="header__menu-link">about</NuxtLink>
+                <NuxtLink to="#" class="header__menu-link">discover</NuxtLink>
+                <NuxtLink to="#" class="header__menu-link">services</NuxtLink>
+                <NuxtLink to="#" class="header__menu-link">Как купить или продать</NuxtLink>
             </div>
-            <div class="header__btns-btn header__btns-btn--mobile">
-                <icons-search />
-            </div>
-            <div class="header__btns-btn header__btns-btn--tablet">
-                <icons-favourites />
-            </div>
-            <div class="header__btns-btn">
-                <icons-cart />
-            </div>
+            <div class="header__menu-btns">
+                <div class="header__btns-btn header__btns-btn--mobile">
+                    <p>Авторизация</p>
+                    <icons-auth />
+                </div>
+                <div class="header__btns-btn header__btns-btn--mobile">
+                    <icons-search />
+                </div>
+                <div class="header__btns-btn header__btns-btn--tablet">
+                    <icons-favourites />
+                </div>
+                <div class="header__btns-btn">
+                    <icons-cart />
+                </div>
 
-            <div class="header__btns-btn header__btns-btn--hide header__btns-btn" @click="isMenuOpen = !isMenuOpen">
-                <icons-burger v-if="isMenuOpen" />
-                <icons-close v-else />
+                <div class="header__btns-btn header__btns-btn--hide header__btns-btn" @click="isMenuOpen = !isMenuOpen">
+                    <icons-burger v-if="isMenuOpen" />
+                    <icons-close v-else />
+                </div>
             </div>
-        </div>
-    </header>
-    <transition>
-		<header-burger v-if="!isMenuOpen" />
-	</transition>
+        </header>
+        <transition>
+            <header-burger v-if="!isMenuOpen" />
+        </transition>
+    </div>
 </template>
 
 <script setup>
@@ -43,16 +45,6 @@
 </script>
 
 <style lang="scss">
-    .v-enter-active,
-    .v-leave-active {
-        transition: all 0.5s ease;
-    }
-
-    .v-enter-from,
-    .v-leave-to {
-        transform: translateX(100%);
-    }
-
     .header
     {
         padding-top: 18px;
